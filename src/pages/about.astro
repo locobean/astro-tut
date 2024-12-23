@@ -9,6 +9,10 @@ const identity = {
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -19,7 +23,7 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
     <meta name="generator" content={Astro.generator} >
     <title>{pageTitle}</title>
   </head>
-    <body>
+<body>
    <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog">Blog</a>
@@ -38,11 +42,18 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
     {identity.hobbies.length >= 2 && 
       <li>My two hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}.</li>
     }
+  </ul>
     <p>Here are some of the skills I have:</p>
     <ul>
       {skills.map((skill) => (
         <li>{skill}</li>
       ))}
   </ul>
+  {happy && <p>I am happy to be learning Astro!</p>}
+
+  {finished && <p>I finished this tutorial!</p>}
+
+  {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
 </body>
 </html
